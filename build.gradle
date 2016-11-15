@@ -18,6 +18,14 @@ dependencies {
 }
 
 android {
+    signingConfigs {
+        internalConfig {
+            keyAlias System.getProperty("KEY_ALIAS")
+            keyPassword System.getProperty("KEY_PASSWORD")
+            storeFile rootProject.file("keystore.jks")
+            storePassword System.getProperty("STORE_PASSWORD")
+        }
+    }
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
 
